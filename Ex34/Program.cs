@@ -1,33 +1,24 @@
 ﻿// Массив случайных положительных трехзначных чисел. Подсчет количества четных чисел в массиве.
 Console.WriteLine("Введите количество элементов массива: ");
 int q = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Сейчас я заполню его случайными трехзачными положительными числами и посчитаю количество четных элементов массива ");
+Console.WriteLine("Сейчас я заполню его случайными трехзачными положительными числами и посчитаю количество четных чисел");
 
-int[] array = new int[q];
-
-int Method (int a)
+void QuanEvenNumbers()
 {
-        return array[a];
-}
- 
-    Console.WriteLine("Ваш массив:");
-    
-for (int i = 0; i < q; i++)
-{
-    array[i] = new Random().Next(100, 1000);
-    Console.Write(" " + Method(i) + " ");
-}
-System.Console.WriteLine();
-
-int quanIndPos = 0;
-
+int[] array = new int[q];    
+for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(100, 1000);
+    }
+int quanEvenNum = 0;
 for(int j = 0; j < q; j++)
 {
     if(array[j] % 2 == 0)
         {
-            quanIndPos ++;
+            quanEvenNum ++;
         } 
 }
-Console.WriteLine($"Количество четных элементов масcива = {quanIndPos}");
-
-
+Console.WriteLine($"Ваш массив: {String.Join(", ", array)}");
+Console.WriteLine($"Количество четных чисел масcива = {quanEvenNum}");
+}
+QuanEvenNumbers();
